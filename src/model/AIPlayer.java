@@ -1,5 +1,10 @@
 package model;
+import java.rmi.UnexpectedException;
+import java.util.ArrayList;
 import java.util.Random;
+
+import javax.print.attribute.standard.Sides;
+import javax.swing.plaf.TextUI;
 
 public class AIPlayer extends PlayerModel{
 
@@ -20,8 +25,12 @@ public class AIPlayer extends PlayerModel{
 		return symbol[rand.nextInt(symbol.length)];
 	}
 	
-	public void makeMove() {
+	public void makeMove(ArrayList<Integer> grid) {// deplacement de l'IA
+		choixIA = random(0,8);
+		while grid.get(choixIA) != "0" // Tant que index de l'ArrayList n'est pas vite, il boucle.
+		{
+				choixIA = random(0,8);
 		
-	}
-
+		}
+		return choixIA;
 }
