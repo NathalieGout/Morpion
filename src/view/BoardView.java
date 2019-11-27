@@ -45,7 +45,7 @@ public class BoardView  {
 			
 			System.out.print("|");
 		}
-		
+		System.out.println();
 		
 	}
 	

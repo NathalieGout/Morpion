@@ -11,8 +11,8 @@ public class GridModel {
 		}
 	}
 	
-	public void setGrid() {
-		
+	public void setGrid(int move, int player) {
+		grid.set(move, player);
 	}
 	
 	public ArrayList<Integer> getGrid() {

@@ -5,6 +5,7 @@ import view.*;
 
 public class Game {
 	private PlayerModel currentPlayer;
+	private int currentPlayerNb;
 	private int nbPlayers;
 
 	public Game() {
@@ -52,13 +53,40 @@ public class Game {
 		}
 		
 		currentPlayer = player1;
+		currentPlayerNb = 1;
+		
 		
 		//------------------------start--------------------------------
 		int i = 0;
-		while (testVictory() && i < 1) {
-			boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());
-			i++;
+		while (testVictory() && i <= 9) {
+			boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());  //affiche la grille
 			
+			if (currentPlayer instanceof HumanPlayer) {  //si c'est un humain
+				gridModel.setGrid(boardView.getMove(),currentPlayerNb);
+			} else {
+				AIPlayer player = (AIPlayer) currentPlayer;  //obligé pour utiliser make move
+				gridModel.setGrid(player.makeMove(gridModel.getGrid()),currentPlayerNb);
+			}
+			
+			
+
+			if (currentPlayer == player1) {  //inverse le joueur
+				currentPlayer = player2;
+				currentPlayerNb = 2;
+			} else {
+				currentPlayer = player1;
+				currentPlayerNb = 1;
+			}
+			System.out.println(i);
+			i++;
+		}
+		
+		if(testVictory()) {
+			if (currentPlayer == player1) {
+				pageView.displayFin(player2.getName());
+			} else {
+				pageView.displayFin(player1.getName());
+			}
 		}
 	}
 	

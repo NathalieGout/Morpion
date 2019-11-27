@@ -5,9 +5,7 @@ package view;
 public class PageView  {
 
 	public PageView() {
-		// TODO Auto-generated constructor stub
-		
-		
+
 	}
 	
 	public void displayBienvenue(){
@@ -16,7 +14,7 @@ public class PageView  {
 	}
 	
 	public void displayFin (String player) {
-		System.out.println(player + "a gagné!");
+		System.out.println(player + " a gagné!");
 		
 	}
 
