@@ -45,16 +45,24 @@ public class BoardView  {
 			
 			System.out.print("|");
 		}
-		System.out.println();
+		System.out.println("");
 		
 	}
 	
-	public int getMove() {
-		System.out.println("Quelle case voulez vous jouer?");
+	public int getMove(ArrayList<Integer> grid) {
+		
 		Scanner sc = new Scanner(System.in);
 		String str= sc.nextLine();
 		int nb = Integer.parseInt(str);
-		sc.close();
+		
+		while (grid.get(nb) != 0) // Tant que index de l'ArrayList n'est pas vite, il boucle.
+		{
+			System.out.println("Quelle case voulez vous jouer?");
+			str = sc.nextLine();
+			nb = Integer.parseInt(str);
+		
+		}
+
 		return nb;
 		
 	}

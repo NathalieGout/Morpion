@@ -7,7 +7,6 @@ public class PlayersView {
 
 	public PlayersView() {
 
-		// TODO Auto-generated constructor stub
 	}
 
 	public int displayNbre() {

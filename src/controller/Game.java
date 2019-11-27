@@ -62,7 +62,7 @@ public class Game {
 			boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());  //affiche la grille
 			
 			if (currentPlayer instanceof HumanPlayer) {  //si c'est un humain
-				gridModel.setGrid(boardView.getMove(),currentPlayerNb);
+				gridModel.setGrid(boardView.getMove(gridModel.getGrid()),currentPlayerNb);
 			} else {
 				AIPlayer player = (AIPlayer) currentPlayer;  //obligé pour utiliser make move
 				gridModel.setGrid(player.makeMove(gridModel.getGrid()),currentPlayerNb);
