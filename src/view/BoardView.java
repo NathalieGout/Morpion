@@ -23,7 +23,7 @@ public class BoardView  {
 		
 	}
 	
-	public void publicdisplayPlateau(ArrayList<Integer>grid) {
+	public void displayPlateau(ArrayList<Integer>grid) {
 		// TODO Auto-generated method stub
 		
 		for (int i = 0; i < grid.size(); i++) {

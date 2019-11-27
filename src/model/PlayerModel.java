@@ -1,4 +1,5 @@
-package model;
+
+ package model;
 
 public abstract class PlayerModel {
 	private String name;
