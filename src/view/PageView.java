@@ -10,12 +10,12 @@ public class PageView  {
 		
 	}
 	
-	private void displayBienvenue(){
+	public void displayBienvenue(){
 		
 		System.out.println("Bonjour et bonne partie !!");
 	}
 	
-	private void displayFin (String player) {
+	public void displayFin (String player) {
 		System.out.println(player + "a gagné!");
 		
 	}

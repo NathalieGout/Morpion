@@ -20,7 +20,7 @@ public class AIPlayer extends PlayerModel{
 		return symbol[rand.nextInt(symbol.length)];
 	}
 	
-	public int makeMove() {
+	public void makeMove() {
 		
 	}
 

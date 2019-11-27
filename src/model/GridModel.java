@@ -6,9 +6,12 @@ public class GridModel {
 	
 	public GridModel() {
 		grid = new ArrayList<Integer>();
+		for(int i = 0; i < 9; i++) {
+			grid.add(0);
+		}
 	}
 	
-	public boolean setGrid() {
+	public void setGrid() {
 		
 	}
 	

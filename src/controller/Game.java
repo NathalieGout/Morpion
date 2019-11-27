@@ -11,9 +11,11 @@ public class Game {
 		super();
 	}
 	
-	public void prepare() {
+	public void start() {
+		//prepare
+		
 		//Declaration des vues
-		GridModel gridView = new GridModel();
+		GridModel gridModel = new GridModel();
 		PageView pageView = new PageView();
 		PlayersView playerView = new PlayersView();
 		BoardView boardView = new BoardView();
@@ -29,26 +31,35 @@ public class Game {
 		case 0:
 			player1 = new AIPlayer();
 			player2 = new AIPlayer();
+
 			break;
 			
 		case 1:
-			player1 = new HumanPlayer(playerView.displayNbre(),playerView.symbol());
+			player1 = new HumanPlayer(playerView.displayNom(),playerView.symbol());
 			player2 = new AIPlayer();
+
 			break;
 			
 		case 2:
-			player1 = new HumanPlayer(playerView.displayNbre(),playerView.symbol());
-			player2 = new HumanPlayer(playerView.displayNbre(),playerView.symbol());
+			player1 = new HumanPlayer(playerView.displayNom(),playerView.symbol());
+			player2 = new HumanPlayer(playerView.displayNom(),playerView.symbol());
+			
 			break;
+			
+		default:
+			player1 = null;
+			player2 = null;
 		}
+		
 		currentPlayer = player1;
 		
-		
-		
-	}
-	
-	public void start() {
-		
+		//------------------------start--------------------------------
+		int i = 0;
+		while (testVictory() && i < 1) {
+			boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());
+			i++;
+			
+		}
 	}
 	
 	public boolean testVictory() {
