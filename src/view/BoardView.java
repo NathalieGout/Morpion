@@ -53,7 +53,8 @@ public class BoardView  {
 		System.out.println("Quelle case voulez vous jouer?");
 		Scanner sc = new Scanner(System.in);
 		String str= sc.nextLine();
-		int nb = Integer.parseInt(str); 
+		int nb = Integer.parseInt(str);
+		sc.close();
 		return nb;
 		
 	}

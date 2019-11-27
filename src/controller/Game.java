@@ -58,7 +58,7 @@ public class Game {
 		
 		//------------------------start--------------------------------
 		int i = 0;
-		while (testVictory() && i <= 9) {
+		while (testVictory() && i < 9) {
 			boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());  //affiche la grille
 			
 			if (currentPlayer instanceof HumanPlayer) {  //si c'est un humain
@@ -77,9 +77,9 @@ public class Game {
 				currentPlayer = player1;
 				currentPlayerNb = 1;
 			}
-			System.out.println(i);
 			i++;
 		}
+		boardView.displayPlateau(gridModel.getGrid(),player1.getSymbol(),player2.getSymbol());
 		
 		if(testVictory()) {
 			if (currentPlayer == player1) {
